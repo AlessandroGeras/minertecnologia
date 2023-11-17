@@ -29,6 +29,12 @@ Uma vez logado especificamente como usuário administrador, pode se voltar a pag
 Uma vez logado, pode se retornar à página inicial de login clicando no seu nome na Navbar, onde terá a opção de fazer o Logout.
 
 
+### Imagens do projeto
+![Login](https://github.com/AlessandroGeras/minertecnologia/blob/master/public/Login.jpeg)
+![Admin](https://github.com/AlessandroGeras/minertecnologia/blob/master/public/Admin.jpeg)
+![Form](https://github.com/AlessandroGeras/minertecnologia/blob/master/public/Form.jpeg)
+
+
 ### Instalação de dependências
 ```
 composer install

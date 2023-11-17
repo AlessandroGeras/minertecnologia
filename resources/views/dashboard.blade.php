@@ -1,13 +1,25 @@
+@extends('layouts.layout')
+
+@section('title', 'Dashboard')
+
+@section('content')
+
 <x-app-layout>
-    <div class="py-12">
+    <div class="">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                
+
+                @if(session('success'))
+                <div class="alert alert-success bg-green-500 text-center">
+                    {{ session('success') }}
+                </div>
+                @endif
+
                 @if(auth()->check())
-                @switch(auth()->user()->getRoleNames()->first())
+                @foreach(auth()->user()->getRoleNames() as $role)
+                @switch($role)
                 @case('admin')
-                {{-- Conteúdo para admin --}}
-                Olá, administrador!
+                <x-create-user />
                 @break
 
                 @case('products')
@@ -25,13 +37,12 @@
                 Bem-vindo, usuário de marcas!
                 @break
 
-                @default
-                {{-- Conteúdo para outros usuários --}}
-                Bem-vindo, usuário padrão.
                 @endswitch
+                @endforeach
                 @endif
 
             </div>
         </div>
     </div>
 </x-app-layout>
+@endsection

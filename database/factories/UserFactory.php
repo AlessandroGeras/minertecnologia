@@ -27,7 +27,7 @@ class UserFactory extends Factory
             $adminRole = Role::firstOrCreate(['name' => 'admin', 'guard_name' => 'web']);
             $productsRole = Role::firstOrCreate(['name' => 'products', 'guard_name' => 'web']);
             $categoryRole = Role::firstOrCreate(['name' => 'category', 'guard_name' => 'web']);
-            $marksRole = Role::firstOrCreate(['name' => 'marks', 'guard_name' => 'web']);
+            $brandsRole = Role::firstOrCreate(['name' => 'brands', 'guard_name' => 'web']);
             
             $user->assignRole($adminRole);
         });

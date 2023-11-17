@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-mark class="block h-9 w-auto" />
+                    <img src="https://minertecnologia.com/wp-content/uploads/2021/11/Logo-01-1-1024x430.png" width="100px" height="100px" style="background-color: black;">
                     </a>
                 </div>
 

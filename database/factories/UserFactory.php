@@ -25,9 +25,9 @@ class UserFactory extends Factory
     {
         return $this->afterCreating(function (User $user) {
             $adminRole = Role::firstOrCreate(['name' => 'admin', 'guard_name' => 'web']);
-            $productsRole = Role::firstOrCreate(['name' => 'products', 'guard_name' => 'web']);
-            $categoryRole = Role::firstOrCreate(['name' => 'category', 'guard_name' => 'web']);
-            $brandsRole = Role::firstOrCreate(['name' => 'brands', 'guard_name' => 'web']);
+            $productsRole = Role::firstOrCreate(['name' => 'produtos', 'guard_name' => 'web']);
+            $categoryRole = Role::firstOrCreate(['name' => 'categorias', 'guard_name' => 'web']);
+            $brandsRole = Role::firstOrCreate(['name' => 'marcas', 'guard_name' => 'web']);
             
             $user->assignRole($adminRole);
         });

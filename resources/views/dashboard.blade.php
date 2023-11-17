@@ -6,8 +6,8 @@
 
 <x-app-layout>
     <div class="">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 my-16">
+            <div class="overflow-hidden shadow-xl sm:rounded-lg">
 
                 @if(session('success'))
                 <div class="alert alert-success bg-green-500 text-center">
@@ -16,28 +16,25 @@
                 @endif
 
                 @if(auth()->check())
-                @foreach(auth()->user()->getRoleNames() as $role)
-                @switch($role)
-                @case('admin')
-                <x-create-user />
-                @break
+                @php
+                $roles = auth()->user()->getRoleNames()->toArray();
+                sort($roles);
+                @endphp
 
-                @case('products')
-                {{-- Conteúdo para products --}}
-                Bem-vindo, usuário de produtos!
-                @break
+                @foreach($roles as $role)
+                @if($role == 'admin')
+                <x-show-users :users="$users" />
 
-                @case('category')
-                {{-- Conteúdo para category --}}
-                Bem-vindo, usuário de categorias!
-                @break
+                @elseif($role == 'categorias')
+                <x-role text="Bem-vindo ao setor de categorias" />
 
-                @case('marks')
-                {{-- Conteúdo para marks --}}
-                Bem-vindo, usuário de marcas!
-                @break
+                @elseif($role == 'marcas')
+                <x-role text="Bem-vindo ao setor de marcas" />
 
-                @endswitch
+                @elseif($role == 'produtos')
+                <x-role text="Bem-vindo ao setor de produtos" />
+
+                @endif
                 @endforeach
                 @endif
 
@@ -45,4 +42,5 @@
         </div>
     </div>
 </x-app-layout>
+
 @endsection

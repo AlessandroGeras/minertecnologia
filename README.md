@@ -41,6 +41,11 @@ composer install
 npm install
 ```
 
+### Criar a base de dados
+```
+php artisan migrate
+php artisan db:seed
+```
 
 ### Rodar o servidor
 ```

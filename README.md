@@ -35,6 +35,15 @@ Uma vez logado, pode se retornar à página inicial de login clicando no seu nom
 ![Form](https://github.com/AlessandroGeras/minertecnologia/blob/master/public/Form.jpeg)
 
 
+### Tecnologias usadas
+```
+PHP
+Laravel
+Jetstream
+Spatie
+MySQL
+```
+
 ### Instalação de dependências
 ```
 composer install
@@ -51,3 +60,7 @@ php artisan db:seed
 ```
 php artisan serve
 ```
+
+### Login Administrador
+User:minertecnologia@minertecnologia.com.br
+Pass:minertecnologia
